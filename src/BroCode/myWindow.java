@@ -121,83 +121,48 @@ public class myWindow extends JFrame {
     {
 
         // horizontal line conditions
-        if (slots[0] == slots[1] && slots[1] == slots[2]) {
-            for (int i = 0; i < 3; i++)
-            {
-                boxes[i].setFont(new Font("Calibri", Font.BOLD, 69));
-                boxes[i].setBackground(Color.GREEN);
+        for (int i = 0; i<9; i += 3) {
+            if (slots[i] == slots[i + 1] && slots[i + 1] == slots[i + 2]) {
+                whoWins();
+                for (int j = i; j<3; j++)
+                {
+                    boxes[j].setFont(new Font("Calibri", Font.BOLD, 69));
+                    boxes[j].setBackground(Color.GREEN);
+                }
             }
-            whoWins();
-        }
-
-        if (slots[3] == slots[4] && slots[3] == slots[5]) {
-            for (int i = 3; i < 6; i++)
-            {
-                boxes[i].setFont(new Font("Calibri", Font.BOLD, 69));
-                boxes[i].setBackground(Color.GREEN);
-            }
-            whoWins();
-        }
-
-        if (slots[6] == slots[7] && slots[7] == slots[8]) {
-            for (int i = 6; i < 9; i++)
-            {
-                boxes[i].setFont(new Font("Calibri", Font.BOLD, 69));
-                boxes[i].setBackground(Color.GREEN);
-            }
-            whoWins();
         }
 
         // vertical line conditions
-
-        if (slots[0] == slots[3] && slots[3] == slots[6])
+        for (int i=0; i<3; i++)
         {
-            for (int i=0; i<9; i+=3)
-            {
-                boxes[i].setFont(new Font("Calibri", Font.BOLD, 69));
-                boxes[i].setBackground(Color.GREEN);
+            if (slots[i] == slots[i + 3] && slots[i + 3] == slots[i + 6]) {
+                whoWins();
+                for (int j = i; j<9; j += 3)
+                {
+                    boxes[j].setFont(new Font("Calibri", Font.BOLD, 69));
+                    boxes[j].setBackground(Color.GREEN);
+                }
             }
-            whoWins();
-        }
-
-        if (slots[1] == slots[4] && slots[4] == slots[7])
-        {
-            for (int i=1; i<9; i+=3)
-            {
-                boxes[i].setFont(new Font("Calibri", Font.BOLD, 69));
-                boxes[i].setBackground(Color.GREEN);
-            }
-            whoWins();
-        }
-
-        if (slots[2] == slots[5] && slots[5] == slots[8])
-        {
-            for (int i=2; i<9; i+=3)
-            {
-                boxes[i].setFont(new Font("Calibri", Font.BOLD, 69));
-                boxes[i].setBackground(Color.GREEN);
-            }
-            whoWins();
         }
 
         // diagonal line conditions
         if (slots[0] == slots[4] && slots[4] == slots[8])
         {
+            whoWins();
             for (int i=0; i<=8; i += 4)
             {
                 boxes[i].setFont(new Font("Calibri", Font.BOLD, 69));
                 boxes[i].setBackground(Color.GREEN);
             }
-            whoWins();
         }
         if (slots[2] == slots[4] && slots[4] == slots[6])
         {
+            whoWins();
             for (int i=2; i<=6; i += 2)
             {
                 boxes[i].setFont(new Font("Calibri", Font.BOLD, 69));
                 boxes[i].setBackground(Color.GREEN);
             }
-            whoWins();
         }
         // end of method
     }
