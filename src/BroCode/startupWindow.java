@@ -9,6 +9,7 @@ public class startupWindow extends JFrame
 {
 
     JButton startButton = new JButton("Start Game");
+    JButton quitButton = new JButton("Quit Game");
 
     startupWindow()
     {
@@ -19,10 +20,22 @@ public class startupWindow extends JFrame
         this.setLocationRelativeTo(null);
 
 
-        this.add(startButton, BorderLayout.CENTER);
+        this.add(startButton, BorderLayout.NORTH);
+        this.add(quitButton, BorderLayout.SOUTH);
+        this.pack();
+
         this.setVisible(true);
 
         startButton.setFocusable(false);
+        quitButton.setFocusable(false);
+
+        quitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
+
         startButton.addActionListener(new ActionListener()
         {
             @Override

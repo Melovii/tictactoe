@@ -59,6 +59,17 @@ public class myWindow extends JFrame implements ActionListener {
         this.setVisible(true);
     }
 
+    public void newGame()
+    {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException ex) {
+            throw new RuntimeException(ex);
+        }
+        dispose();
+        new startupWindow();
+    }
+
     public void checkTurn() {
         player1_turn = counter % 2 == 0;
         counter++;
@@ -105,11 +116,13 @@ public class myWindow extends JFrame implements ActionListener {
                         for (JButton button : box) {
                             button.setEnabled(false);
                         }
+                        newGame();
                     } else if (checkDraw()) {
                         BottomTitle.setText("It's a draw!");
                         for (JButton button : box) {
                             button.setEnabled(false);
                         }
+                        newGame();
                     }
                 }
             }
