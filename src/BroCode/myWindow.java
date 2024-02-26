@@ -25,7 +25,7 @@ public class myWindow extends JFrame {
             boxes[i].addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    if (boxes[INDEX].getText().equals(""))
+                    if (boxes[INDEX].getText().isEmpty())
                     {
                         if ((counter % 2) == 1) // if counter is odd, it's O's turn
                         {
@@ -101,7 +101,7 @@ public class myWindow extends JFrame {
         boolean empty_flag = false;
         for (int i=0; i<9; i++)
         {
-            if (boxes[i].getText().equals(""))
+            if (boxes[i].getText().isEmpty())
             {
                 empty_flag = true;
             }
